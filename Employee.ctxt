@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=Employee
+comment0.text=\n\ Programmer\:\ \ \ \ sveinson\n\ Class\:\ \ CS30S\n\n\ Assignment\:\ AxQy\n\n\ Description\:\ brief\ description\ of\ class\n
+comment1.params=
+comment1.target=Employee()
+comment2.params=hours\ wage
+comment2.target=Employee(int,\ float)
+comment3.params=
+comment3.target=int\ getHours()
+comment3.text=\n\ Description\:\ \ get\ number\ of\ hours\ worked\n\ \n\ @return\ \ \ \ \ \ \ number\ of\ hours\n***************************************
+comment4.params=
+comment4.target=double\ getWage()
+comment4.text=\n\ Description\:\ \ get\ hourly\ wage\n\ \n\ @return\ \ \ \ \ \ \ wage\ in\ dollars\n***************************************
+comment5.params=hours
+comment5.target=void\ setHours(int)
+comment5.text=\n\ Description\:\ \ set\ the\ number\ of\ hours\ worked\n\ \n\ @param\ \ \ \ \ \ \ \ new\ number\ of\ hours\n***************************************
+comment6.params=wage
+comment6.target=void\ setWage(double)
+comment6.text=\n\ Description\:\ \ set\ hourly\ wage\n\ \n\ @param\ \ \ \ \ \ \ \ new\ hourly\ wage\n***************************************
+numComments=7
