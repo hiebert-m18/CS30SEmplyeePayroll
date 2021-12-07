@@ -114,8 +114,8 @@ public class Employee {
     public String toString() {
         String st = "";
         
-        st += "ID: " + this.getID() + nl;
-        st += "Hours worked: " + this.getHours() + nl;
+        st += String.format("Employee ID: %4d" + nl, this.getID());
+        st += String.format("Hours worked: %4d" + nl, this.getHours());
         st += "Hourly wage: " + this.getWage() + nl;
         st += "Regular pay: " + this.getRegularPay() + nl;
         st += "Overtime pay: " + this.getOverTimePay() + nl;
