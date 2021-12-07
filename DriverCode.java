@@ -2,6 +2,8 @@ import java.util.Scanner;
 import javax.swing.*;
 import java.io.*;
 import java.text.NumberFormat;
+import java.util.Formatter;
+import java.util.ArrayList;
 
 /** ***************************************************
  *  Name:           Sveinson
@@ -13,7 +15,7 @@ import java.text.NumberFormat;
  * 
  *************************************************************/
 
-public class FormatTemplateV3 {
+public class DriverCode {
 
     public static void main(String[] args) throws IOException{
     // ***** constants *******
@@ -33,24 +35,28 @@ public class FormatTemplateV3 {
         String nl = System.lineSeparator();
     
     // ***** objects *****
+        ArrayList<Employee> employees = new ArrayList<>();
+        
+        ProgramInfo programinfo = new ProgramInfo("Employee Payroll");
     
         //Scanner scanner = new Scanner(System.in);
         //NumberFormat currency = NumberFormat.getCurrencyInstance();
         
         // file io buffers for reading and writing to text files
         
-        //BufferedReader fin = new BufferedReader(new FileReader("filename.txt"));
+        BufferedReader fin = null;
+        
+        try {
+            fin = new BufferedReader(new FileReader("EmployeeDecemberExamData.txt"));
+        } catch (Exception e) {
+            System.out.println("No such file");
+        }// end try/catch
+        
         //PrintWriter fout = new PrintWriter(new BufferedWriter(new FileWriter("outfle.txt")));
     
     // ***** print banners *****
     
-        banner = "*****************************" + nl;
-        banner += "Name:        Sveinson" + nl;
-        banner += "Class:       CS30S" + nl;
-        banner += "Assignment:  Ax Qy" + nl;
-        banner += "*****************************" + nl + nl;
-        
-        System.out.println(banner);
+        System.out.println(programinfo.getBanner());
         //fout.print(banner);
     
     // ***** Get Input *****
@@ -60,13 +66,24 @@ public class FormatTemplateV3 {
         // echo input back to console window
     
     // ***** Main Processing *****
+        
+        String line;
+        while ((line = fin.readLine()) != null) {
+            String[] splitStr = line.split(" ");
+            
+            employees.add(new Employee(Integer.parseInt(splitStr[0]), Double.parseDouble(splitStr[1])));
+        }// end eof
+        
+        for (Employee i : employees) {
+            System.out.println(i);
+        }// end for
     
     // ***** Print Formatted Output *****
     
     // ***** Closing Message *****
     
         System.out.println();
-        System.out.println("end of processing");
+        System.out.println(programinfo.getClosingMsg());
         //fout.println("End of Processing");
         
     // **** close io buffers *****

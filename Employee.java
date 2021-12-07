@@ -12,6 +12,7 @@
 public class Employee {
     //*** Class Variables ***
     private static int nextID = 1000;
+    private String nl = System.lineSeparator();
     
     //*** Instance Variables ***
     private int id;
@@ -23,7 +24,7 @@ public class Employee {
         id = nextID++;
     }// end no-arg constructor
     
-    public Employee(int hours, float wage) {
+    public Employee(int hours, double wage) {
         id = nextID++;
         this.hours = hours;
         this.wage = wage;
@@ -43,6 +44,15 @@ public class Employee {
     
     //*** Getters ***
     /*****************************************
+    * Description:  get id of employee
+    * 
+    * @return       id
+    * ****************************************/
+    public int getID() {
+        return this.id;
+    }
+    
+    /*****************************************
     * Description:  get number of hours worked
     * 
     * @return       number of hours
@@ -59,6 +69,26 @@ public class Employee {
     public double getWage() {
         return this.wage;
     }// end getWage()
+    
+    public double getRegularPay() {
+        if (this.hours <= 40) {
+            return this.hours * this.wage;
+        } else {
+            return 40 * this.wage;
+        }//end if
+    }// end getRegularPay
+    
+    public double getOverTimePay() {
+        if (this.hours > 40) {
+            return (this.hours - 40) * (1.5 * this.wage);
+        } else {
+            return 0.0;
+        }
+    }// end getOverTimePay
+    
+    public double getGrossPay() {
+        return getRegularPay() + getOverTimePay();
+    }// end getGrossPay
     
     //*** Setters ***
     /*****************************************
@@ -78,5 +108,20 @@ public class Employee {
     public void setWage(double wage) {
         this.wage = wage;
     }// end setWage()
+    
+    // Other Methods
+    @Override
+    public String toString() {
+        String st = "";
+        
+        st += "ID: " + this.getID() + nl;
+        st += "Hours worked: " + this.getHours() + nl;
+        st += "Hourly wage: " + this.getWage() + nl;
+        st += "Regular pay: " + this.getRegularPay() + nl;
+        st += "Overtime pay: " + this.getOverTimePay() + nl;
+        st += "Gross pay: " + this.getGrossPay() + nl;
+        
+        return st;
+    }
     
 } // end of public class
