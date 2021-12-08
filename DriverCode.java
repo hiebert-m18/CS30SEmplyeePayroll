@@ -78,16 +78,31 @@ public class DriverCode {
             System.out.println(i);
         }// end for
         
+        System.out.println("--------------------");
+        
         employees.get(3).setHours(60);
         employees.get(3).setWage(32.12);
         
         System.out.println("Employee 3");
+        System.out.println("--------------------");
         System.out.println(String.format("%-10s%10d", "ID:", employees.get(3).getID()));
         System.out.println(String.format("%-10s%10d", "Hours:", employees.get(3).getHours()));
         System.out.println(String.format("%-10s%10.2f", "Wage:", employees.get(3).getWage()));
         System.out.println(String.format("%-10s%10.2f", "Regular:", employees.get(3).getRegularPay()));
         System.out.println(String.format("%-10s%10.2f", "Overtime:", employees.get(3).getOverTimePay()));
         System.out.println(String.format("%-10s%10.2f", "Gross:", employees.get(3).getGrossPay()));
+        
+        employees.remove(5);
+        
+        System.out.println("--------------------");
+        System.out.println("Employee 5 has been removed");
+        System.out.println("See all records below (employee 5 is missing): ");
+        System.out.println("--------------------" + nl);
+        
+        for (Employee i : employees) {
+            System.out.println(i);
+        }// end for
+        
     
     // ***** Print Formatted Output *****
     
