@@ -13,6 +13,8 @@ public class Employee {
     //*** Class Variables ***
     private static int nextID = 1000;
     private String nl = System.lineSeparator();
+    private final int fullDay = 40;
+    private final double overtimePay = 1.5;
     
     //*** Instance Variables ***
     private int id;
@@ -76,10 +78,10 @@ public class Employee {
     * @return       regular pay in dollars
     * ****************************************/
     public double getRegularPay() {
-        if (this.hours <= 40) {
+        if (this.hours <= this.fullDay) {
             return this.hours * this.wage;
         } else {
-            return 40 * this.wage;
+            return this.fullDay * this.wage;
         }//end if
     }// end getRegularPay
     
@@ -89,8 +91,8 @@ public class Employee {
     * @return       overtime pay in dollars
     * ****************************************/
     public double getOverTimePay() {
-        if (this.hours > 40) {
-            return (this.hours - 40) * (1.5 * this.wage);
+        if (this.hours > this.fullDay) {
+            return (this.hours - this.fullDay) * (this.overtimePay * this.wage);
         } else {
             return 0.0;
         }
@@ -129,12 +131,12 @@ public class Employee {
     public String toString() {
         StringBuilder st = new StringBuilder();
         
-        st.append(String.format("%-10s%10d%s", "Employee ID:", this.getID(), nl));
-        st.append(String.format("%-10s%10d%s", "Hours worked:", this.getHours(), nl));
-        st.append(String.format("%-10s%10.2f%s", "Hourly wage:", this.getWage(), nl));
-        st.append(String.format("%-10s%10.2f%s", "Regular pay:", this.getRegularPay(), nl));
-        st.append(String.format("%-10s%10.2f%s", "Overtime pay:", this.getOverTimePay(), nl));
-        st.append(String.format("%-10s%10.2f%s", "Gross pay:", this.getGrossPay(), nl));
+        st.append(String.format("%-10s%10d%s", "ID:", this.getID(), nl));
+        st.append(String.format("%-10s%10d%s", "Hours:", this.getHours(), nl));
+        st.append(String.format("%-10s%10.2f%s", "Wage:", this.getWage(), nl));
+        st.append(String.format("%-10s%10.2f%s", "Regular:", this.getRegularPay(), nl));
+        st.append(String.format("%-10s%10.2f%s", "Overtime:", this.getOverTimePay(), nl));
+        st.append(String.format("%-10s%10.2f%s", "Gross:", this.getGrossPay(), nl));
         
         return st.toString();
     }
