@@ -80,9 +80,11 @@ public class DriverCode {
         
         System.out.println("--------------------");
         
+        // change hours and wage of employee 3
         employees.get(3).setHours(60);
         employees.get(3).setWage(32.12);
         
+        // print out employee 3 again
         System.out.println("Employee 3");
         System.out.println("--------------------");
         System.out.println(String.format("%-10s%10d", "ID:", employees.get(3).getID()));
@@ -92,6 +94,7 @@ public class DriverCode {
         System.out.println(String.format("%-10s%10.2f", "Overtime:", employees.get(3).getOverTimePay()));
         System.out.println(String.format("%-10s%10.2f", "Gross:", employees.get(3).getGrossPay()));
         
+        // remove employee 5
         employees.remove(5);
         
         System.out.println("--------------------");
@@ -99,6 +102,7 @@ public class DriverCode {
         System.out.println("See all records below (employee 5 is missing): ");
         System.out.println("--------------------" + nl);
         
+        // print out everything again to show that employee 5 is missing
         for (Employee i : employees) {
             System.out.println(i);
         }// end for
