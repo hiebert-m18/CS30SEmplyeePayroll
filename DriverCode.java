@@ -90,7 +90,8 @@ public class DriverCode {
         employees.get(3).setWage(32.12);
         
         // print out employee 3 again
-        System.out.println("Employee 3's hours and wage have been changed:");
+        System.out.println("Employee 3's hours and wage have been changed.");
+        System.out.println("Employee 3's records printed out using getter:");
         
         System.out.println(String.format("|%-10s|%-10s|%-15s|%-15s|%-15s|%-15s|", "ID", "Hours", "Wage", "Regular", "Overtime", "Gross"));
         System.out.print(String.format("|%10d|", employees.get(3).getID()));
