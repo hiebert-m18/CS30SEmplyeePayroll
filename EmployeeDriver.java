@@ -69,7 +69,7 @@ public class EmployeeDriver {
     
     // ***** Main Processing *****
     
-        System.out.println(String.format("|%-10s|%-10s|%-15s|%-15s|%-15s|%-15s|", "ID", "Hours", "Wage", "Regular", "Overtime", "Gross"));
+        System.out.println(String.format("|%10s|%10s|%15s|%15s|%15s|%15s|", "ID", "Hours", "Wage", "Regular", "Overtime", "Gross"));
         
         String line;
         while ((line = fin.readLine()) != null) {
