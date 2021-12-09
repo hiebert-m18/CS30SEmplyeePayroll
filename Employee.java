@@ -8,6 +8,7 @@
  ***********************************************************************/
 
 // import libraries as needed here
+import java.text.NumberFormat;
 
 public class Employee {
     //*** Class Variables ***
@@ -15,6 +16,7 @@ public class Employee {
     private String nl = System.lineSeparator();
     private final int fullDay = 40;
     private final double overtimeMult = 1.5;
+    private NumberFormat currency = NumberFormat.getCurrencyInstance();
     
     //*** Instance Variables ***
     private int id;
@@ -133,10 +135,10 @@ public class Employee {
         
         st.append(String.format("%-10s%10d%s", "ID:", this.getID(), nl));
         st.append(String.format("%-10s%10d%s", "Hours:", this.getHours(), nl));
-        st.append(String.format("%-10s%10.2f%s", "Wage:", this.getWage(), nl));
-        st.append(String.format("%-10s%10.2f%s", "Regular:", this.getRegularPay(), nl));
-        st.append(String.format("%-10s%10.2f%s", "Overtime:", this.getOverTimePay(), nl));
-        st.append(String.format("%-10s%10.2f%s", "Gross:", this.getGrossPay(), nl));
+        st.append(String.format("%-10s%10s%s", "Wage:", currency.format(this.getWage()), nl));
+        st.append(String.format("%-10s%10s%s", "Regular:", currency.format(this.getRegularPay()), nl));
+        st.append(String.format("%-10s%10s%s", "Overtime:", currency.format(this.getOverTimePay()), nl));
+        st.append(String.format("%-10s%10s%s", "Gross:", currency.format(this.getGrossPay()), nl));
         
         return st.toString();
     }
