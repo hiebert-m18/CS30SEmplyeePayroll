@@ -133,12 +133,12 @@ public class Employee {
     public String toString() {
         StringBuilder st = new StringBuilder();
         
-        st.append(String.format("%-10s%10d%s", "ID:", this.getID(), nl));
-        st.append(String.format("%-10s%10d%s", "Hours:", this.getHours(), nl));
-        st.append(String.format("%-10s%10s%s", "Wage:", currency.format(this.getWage()), nl));
-        st.append(String.format("%-10s%10s%s", "Regular:", currency.format(this.getRegularPay()), nl));
-        st.append(String.format("%-10s%10s%s", "Overtime:", currency.format(this.getOverTimePay()), nl));
-        st.append(String.format("%-10s%10s%s", "Gross:", currency.format(this.getGrossPay()), nl));
+        st.append(String.format("|%10d|", this.getID()));
+        st.append(String.format("%10d|", this.getHours()));
+        st.append(String.format("%15s|", currency.format(this.getWage())));
+        st.append(String.format("%15s|", currency.format(this.getRegularPay())));
+        st.append(String.format("%15s|", currency.format(this.getOverTimePay())));
+        st.append(String.format("%15s|", currency.format(this.getGrossPay())));
         
         return st.toString();
     }

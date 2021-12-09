@@ -38,6 +38,8 @@ public class DriverCode {
         ArrayList<Employee> employees = new ArrayList<>();
         
         ProgramInfo programinfo = new ProgramInfo("Employee Payroll");
+        
+        NumberFormat currency = NumberFormat.getCurrencyInstance();
     
         //Scanner scanner = new Scanner(System.in);
         //NumberFormat currency = NumberFormat.getCurrencyInstance();
@@ -66,6 +68,8 @@ public class DriverCode {
         // echo input back to console window
     
     // ***** Main Processing *****
+    
+        System.out.println(String.format("|%-10s|%-10s|%-15s|%-15s|%-15s|%-15s|", "ID", "Hours", "Wage", "Regular", "Overtime", "Gross"));
         
         String line;
         while ((line = fin.readLine()) != null) {
@@ -78,29 +82,31 @@ public class DriverCode {
             System.out.println(i);
         }// end for
         
-        System.out.println("--------------------");
+        System.out.println();
+        System.out.println();
         
         // change hours and wage of employee 3
         employees.get(3).setHours(60);
         employees.get(3).setWage(32.12);
         
         // print out employee 3 again
-        System.out.println("Employee 3");
-        System.out.println("--------------------");
-        System.out.println(String.format("%-10s%10d", "ID:", employees.get(3).getID()));
-        System.out.println(String.format("%-10s%10d", "Hours:", employees.get(3).getHours()));
-        System.out.println(String.format("%-10s%10.2f", "Wage:", employees.get(3).getWage()));
-        System.out.println(String.format("%-10s%10.2f", "Regular:", employees.get(3).getRegularPay()));
-        System.out.println(String.format("%-10s%10.2f", "Overtime:", employees.get(3).getOverTimePay()));
-        System.out.println(String.format("%-10s%10.2f", "Gross:", employees.get(3).getGrossPay()));
+        System.out.println("Employee 3's hours and wage have been changed:");
+        
+        System.out.println(String.format("|%-10s|%-10s|%-15s|%-15s|%-15s|%-15s|", "ID", "Hours", "Wage", "Regular", "Overtime", "Gross"));
+        System.out.print(String.format("|%10d|", employees.get(3).getID()));
+        System.out.print(String.format("%10d|", employees.get(3).getHours()));
+        System.out.print(String.format("%15s|", currency.format(employees.get(3).getWage())));
+        System.out.print(String.format("%15s|", currency.format(employees.get(3).getRegularPay())));
+        System.out.print(String.format("%15s|", currency.format(employees.get(3).getOverTimePay())));
+        System.out.print(String.format("%15s|\n", currency.format(employees.get(3).getGrossPay())));
+        
+        System.out.println();
+        System.out.println();
         
         // remove employee 5
         employees.remove(5);
         
-        System.out.println("--------------------");
-        System.out.println("Employee 5 has been removed");
-        System.out.println("See all records below (employee 5 is missing): ");
-        System.out.println("--------------------" + nl);
+        System.out.println("Employee 5 has been removed:");
         
         // print out everything again to show that employee 5 is missing
         for (Employee i : employees) {
