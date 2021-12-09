@@ -14,7 +14,7 @@ public class Employee {
     private static int nextID = 1000;
     private String nl = System.lineSeparator();
     private final int fullDay = 40;
-    private final double overtimePay = 1.5;
+    private final double overtimeMult = 1.5;
     
     //*** Instance Variables ***
     private int id;
@@ -92,7 +92,7 @@ public class Employee {
     * ****************************************/
     public double getOverTimePay() {
         if (this.hours > this.fullDay) {
-            return (this.hours - this.fullDay) * (this.overtimePay * this.wage);
+            return (this.hours - this.fullDay) * (this.overtimeMult * this.wage);
         } else {
             return 0.0;
         }
