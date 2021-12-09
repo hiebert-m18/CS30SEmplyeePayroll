@@ -1,10 +1,10 @@
 /********************************************************************
- * Programmer:    sveinson
- * Class:  CS30S
+ * Programmer:      hiebert
+ * Class:           CS30S
  *
- * Assignment: AxQy
+ * Assignment:      Employee Payroll
  *
- * Description: brief description of class
+ * Description:     display employee records
  ***********************************************************************/
 
 // import libraries as needed here

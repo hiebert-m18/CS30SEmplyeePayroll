@@ -6,12 +6,12 @@ import java.util.Formatter;
 import java.util.ArrayList;
 
 /** ***************************************************
- *  Name:           Sveinson
+ *  Name:           Hiebert
  *  Class:          CS30S
  * 
- *  Assignment:     Ax Qy
+ *  Assignment:     Employee Payroll
  * 
- *  Description:    Place a short description of your program here
+ *  Description:    use Employee class to display employee records
  * 
  *************************************************************/
 
