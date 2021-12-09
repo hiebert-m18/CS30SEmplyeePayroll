@@ -15,7 +15,7 @@ import java.util.ArrayList;
  * 
  *************************************************************/
 
-public class DriverCode {
+public class EmployeeDriver {
 
     public static void main(String[] args) throws IOException{
     // ***** constants *******
